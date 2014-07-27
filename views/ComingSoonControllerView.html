@@ -1,0 +1,25 @@
+<header>
+    <h1>At The Movies</h1>
+</header>
+<nav>
+    <ul>
+        <li>
+            <a href="/">Now Playing</a>
+        </li>
+        <li>
+            <a href="#/coming-soon">Coming Soon</a>
+        </li>
+    </ul>
+</nav>
+<div>
+    <ul>
+        <li>Coming Soon</li>
+        <li ng-show="!ready">Loading...</li>
+        <li ng-repeat="movie in comingSoonMovies">
+            <img ng-src="{{movie.posters.thumbnail}}" alt="">
+            <strong>{{movie.title}}</strong>
+            <br />
+            <p>{{movie.synopsis}}</p>
+        </li>
+    </ul>
+</div>
