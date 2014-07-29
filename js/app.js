@@ -6,13 +6,13 @@ app.config(function($routeProvider, $locationProvider) {
     // main route
     .when("/now-playing", {
         controller: "NowPlayingController",
-        templateUrl: "views/NowPlayingControllerView.html"
+        templateUrl: "views/moviesTableView.html"
     })
 
     // coming soon
     .when("/coming-soon", {
         controller: "ComingSoonController",
-        templateUrl: "views/ComingSoonControllerView.html"
+        templateUrl: "views/moviesTableView.html"
     })
 
     // no route matched
@@ -24,19 +24,19 @@ app.config(function($routeProvider, $locationProvider) {
 // Controllers
 // NowPlayingController
 app.controller("NowPlayingController", function($scope, nowPlayingMovieFactory) {
-    $scope.nowPlayingMovies = [];
+    $scope.movies = [];
 
     nowPlayingMovieFactory.getNowPlaying().success(function(data) {
-        $scope.nowPlayingMovies = data.movies;
+        $scope.movies = data.movies;
         $scope.ready = true;
     })
 });
 
 // ComingSoonController
 app.controller("ComingSoonController", function($scope, comingSoonMovieFactory) {
-    $scope.comingSoonMovies = [];
+    $scope.movies = [];
     comingSoonMovieFactory.getComingSoon().success(function(data) {
-        $scope.comingSoonMovies = data.movies;
+        $scope.movies = data.movies;
         $scope.ready = true;
     });
 });

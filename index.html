@@ -5,11 +5,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, width=device-width">
     <title>At The Movies</title>
+    <link rel="stylesheet" href="css/ratchet.css">
 </head>
 
 <body>
-
-    <div ng-view>
+    <header class="bar bar-nav">
+        <h1 class="title">At The Movies</h1>
+    </header>
+    <nav class="bar bar-tab">
+        <a class="tab-item" href="/" >
+            <span class="tab-label">Now Playing</span>
+        </a>
+        <a class="tab-item" href="#/coming-soon">
+            <span class="tab-label">Coming Soon</span>
+        </a>
+    </nav>
+    <div ng-view class="content">
         <!-- view placeholder -->
     </div>
 

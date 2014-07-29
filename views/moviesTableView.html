@@ -1,0 +1,12 @@
+<ul class="table-view">
+    <li ng-show="!ready">Loading...</li>
+    <li ng-repeat="movie in movies" class="table-view-cell media">
+        <a href="#">
+            <img ng-src="{{movie.posters.thumbnail}}" class="media-object pull-left">
+            <div class="media-body">
+                <h5>{{movie.title}}</h5>
+                <p>{{movie.synopsis}}</p>
+            </div>
+        </a>
+    </li>
+</ul>
